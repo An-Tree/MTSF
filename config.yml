@@ -1,0 +1,19 @@
+authorName: default
+experimentName: default
+trialConcurrency: 1     # 当前处理好并开始等待的实验数，若有空卡，则运行处理好的实验
+maxExecDuration: 30h   # 最大搜索时间
+maxTrialNum: 500    # 最多实验运行数
+#choice: local, remote, pai   
+trainingServicePlatform: local
+searchSpacePath: search_space.json  #search_space.json的路径
+use_active gpu: true
+useAnnotation: false 
+tuner:
+  builtinTunerName: TPE
+  classArgs:
+    optimize_mode: minimize   # 训练目标参数最大化还是最小化
+trial:
+  command: python -u run.py --is_training 1 --root_path ./dataset/ --data_path weather.csv --model_id weather_96_720 --model CATS --data custom --patch_len 48 --stride 48 --seq_len 96 --pred_len 720 --features M --d_layers 3 --dec_in 21 --des 'Exp' --itr 1 --d_model 256 --d_ff 512 --n_heads 32 --batch_size 128 --xp_i
+
+  codeDir: .
+  

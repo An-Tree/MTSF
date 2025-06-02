@@ -1,0 +1,49 @@
+{
+    
+    "m_layers": {
+      "_type": "choice",
+      "_value": [1,2]
+    },
+    "d_layers": {
+      "_type": "choice",
+      "_value": [1,2,3,4]
+    },
+    "n_heads": {
+        "_type": "choice",
+        "_value": [1, 8, 16, 32]
+    },
+    "lambda_": {
+        "_type": "choice",
+        "_value": [0.1, 0.3, 0.5, 0.7, 0.9]
+    },
+    "beta": {
+        "_type": "choice",
+        "_value": [0.1, 0.3, 0.001, 0.5, 0.9]
+    },
+    "d_model": {
+        "_type": "choice",
+        "_value": [128, 256]
+    },
+    "d_ff": {
+        "_type": "choice",
+        "_value": [128, 256, 512]
+    },
+    "batch_size": {
+        "_type": "choice",
+        "_value": [256, 128, 32, 16, 64]
+    },
+    "m": {
+        "_type": "choice",
+        "_value": [3]
+    },
+    "r": {
+        "_type": "choice",
+        "_value": [1e-1, 1e-2, 1e-3]
+    },
+    "kernel_size": {
+        "_type": "choice",
+        "_value": [25, 25, 25, 45]
+    }
+      
+  }
+  
