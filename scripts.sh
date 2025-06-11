@@ -10,11 +10,11 @@ python -u run.py \
   --dec_in 7 \
   --seq_len 96 \
   --pred_len 96 \
-  --m_layers 2 \
+  --m_layers 1 \
   --d_layers 3 \
   --n_heads 16 \
   --lambda_ 0.8 \
-  --beta 0.1 \
+  --beta 0.05 \
   --d_model 256 \
   --d_ff 256 \
   --batch_size 256 \
