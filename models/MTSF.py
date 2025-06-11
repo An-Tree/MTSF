@@ -112,11 +112,9 @@ class Model_backbone(nn.Module):
 
 class LP(nn.Module):
     def __init__(self,kernel_size=25):
-        super(LP, self).__init__()        
-        s = torch.zeros(1, 1, kernel_size)
-        for i in range(kernel_size): s[0, 0, i] = math.exp(-((i - kernel_size // 2) / (2 * 1.0)) ** 2)
+        super(LP, self).__init__() 
         self.dec = nn.Conv1d(1, 1, kernel_size=kernel_size, stride=1, padding=int(kernel_size//2), padding_mode='replicate', bias=True)
-        self.dec.weight.data = F.softmax(s,dim=-1)
+        self.dec.weight.data = F.softmax(torch.ones(1, 1, kernel_size) / kernel_size,dim=-1)
         self.dec.bias.data.fill_(0.0)
         
     def forward(self, inp):
